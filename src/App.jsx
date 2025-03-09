@@ -1,11 +1,18 @@
 
 import './App.css'
+import Gallery from './components/gallery/Gallery';
+import LeftBar from './components/leftBar/LeftBar';
+import TopBar from './components/topBar/TopBar';
 
 function App() {
   return (
-    <>
-      <h2>Hello App</h2>
-    </>
+    <div className='app'>
+      <LeftBar />
+      <div className="content">
+        <TopBar />
+        <Gallery />
+      </div>
+    </div>
   )
 }
 
