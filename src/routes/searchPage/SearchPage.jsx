@@ -1,9 +1,11 @@
 import React from 'react'
 import './SearchPage.css';
+import Gallery from '../../components/gallery/Gallery';
 
 const SearchPage = () => {
   return (
-    <div className='searchPage'>SearchPage</div>
+    <Gallery />
+    // <div className='searchPage'>SearchPage</div>
   )
 }
 
