@@ -18,10 +18,10 @@ const GalleryItems = ({ item }) => {
       <button className="saveButton">Save</button>
       <div className="overlayIcons">
         <button>
-          <img src="/general/share.svg" alt="share_icon" />
+          <Image path="/general/share.svg" alt="share_icon" />
         </button>
         <button>
-          <img src="/general/more.svg" alt="share_icon" />
+          <Image path="/general/more.svg" alt="share_icon" />
         </button>
       </div>
     </div>
