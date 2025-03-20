@@ -99,3 +99,24 @@ small{
     color: #a6a6a6;
     font-size: 13px;
 }
+
+/* responsive design */
+@media (max-width: 1104px) {
+    .createBottom{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .createForm{
+        width: 100%;
+    }
+}
+
+@media (max-width: 475px) {
+    .upload{
+        width: 100%;
+    }
+}
