@@ -5,21 +5,23 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import InfinteScroll from 'react-infinite-scroll-component';
 
-const fetchPins = async ({ pageParam, search }) => {
+const fetchPins = async ({ pageParam, search, userId }) => {
   const apiUrl = import.meta.env.VITE_API_URL;
   const response = await axios.get(
-    `${apiUrl}/pins?cursor=${pageParam}&search=${search || ""}`
+    `${apiUrl}/pins?cursor=${pageParam}&search=${search || ""}&userId=${
+      userId || ""
+    }`
   );
   return response.data;
 }; 
 
-const Gallery = ({ search }) => {
+const Gallery = ({ search, userId }) => {
   // fetch pin data
 
   // queries
   const { data, fetchNextPage, hasNextPage, status } = useInfiniteQuery({
-    queryKey: ["pins", search],
-    queryFn: ({ pageParam=0 }) => fetchPins({ pageParam, search }),
+    queryKey: ["pins", search, userId],
+    queryFn: ({ pageParam=0 }) => fetchPins({ pageParam, search, userId }),
     initialPageParam: 0,
     getNextPageParam: (lastPage, pages) => lastPage.nextCursor,
   });
