@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import './ProfilePage.css';
 import Image from '../../components/image/Image';
-import Collections from '../../components/collections/Collections';
 import Gallery from '../../components/gallery/Gallery';
 import apiRequest from '../../utils/apiRequest';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router';
+import Boards from '../../components/boards/Boards';
 
 const ProfilePage = () => {
   const [type, setType] = useState("saved");
@@ -55,7 +55,7 @@ const ProfilePage = () => {
         <span onClick={() => setType("saved")} className={type === "saved" ? "active" : ""}>Created</span>
       </div>
       {
-        type === "created" ? <Gallery userId={data._id} /> : <Collections />
+        type === "created" ? <Gallery userId={data._id} /> : <Boards userId={data._id} />
       }
     </div>
   );
