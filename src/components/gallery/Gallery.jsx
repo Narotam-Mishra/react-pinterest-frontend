@@ -1,4 +1,3 @@
-import React from 'react'
 import './Gallery.css';
 import GalleryItems from '../galleryItems/GalleryItems';
 import { useInfiniteQuery } from '@tanstack/react-query';
@@ -38,7 +37,7 @@ const Gallery = ({ search, userId, boardId }) => {
     return "Something went wrong...";
   }
 
-  console.log("Pins data:", data);
+  // console.log("Pins data:", data);
 
   const allPins = data?.pages.flatMap(page => page.pins) || [];
 

@@ -20,10 +20,6 @@ const Boards = ({ userId }) => {
     return "An error has occurred: " + error.message;
   }
 
-  if (!data) {
-    return "Board not found!";
-  }
-
   // console.log("Boards data:", data)
   return (
     <div className="collections">

@@ -1,4 +1,3 @@
-import React from 'react'
 import './PostInteractions.css';
 import Image from '../image/Image';
 
