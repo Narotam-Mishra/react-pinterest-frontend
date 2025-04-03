@@ -1,20 +1,31 @@
-import React from 'react'
 import './UserButton.css';
 import { useState } from 'react';
 import Image from '../image/Image';
+import apiRequest from '../../utils/apiRequest';
+import { useNavigate } from 'react-router';
 
 const UserButton = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   // temp
   const currentUser = true;
+
+  const handleLogout = async () => {
+    try {
+      await apiRequest.post("/users/auth/logout", {}); 
+      navigate("/auth");
+    } catch (error) {
+      console.log("Something went wrong while logout:", error);
+    }
+  }
 
   return currentUser ? (
     <div className="userButton">
       <Image path="/general/noAvatar.png" alt="" />
       <img src="/general/arrow.svg" alt="" className="arrow" onClick={() => setOpen((prev) => !prev)} />
 
-      {/* <div onClick={() => setOpen((prev) => !prev)}>
+      {/* <div onClick={() => setOpen((prev) => !prev)} className='arrowWrapper'>
         <Image
           path="/general/arrow.svg"
           alt=""
@@ -25,7 +36,7 @@ const UserButton = () => {
         <div className="userOptions">
           <div className="userOption">Profile</div>
           <div className="userOption">Settings</div>
-          <div className="userOption">Logout</div>
+          <div className="userOption" onClick={handleLogout}>Logout</div>
         </div>
       )}
     </div>

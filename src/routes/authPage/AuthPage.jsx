@@ -2,10 +2,13 @@ import { useState } from 'react'
 import './AuthPage.css';
 import Image from '../../components/image/Image';
 import apiRequest from '../../utils/apiRequest';
+import { useNavigate } from 'react-router';
 
 const AuthPage = () => {
   const [isRegister, setIsRegister] = useState(false);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +22,9 @@ const AuthPage = () => {
         `/users/auth/${isRegister ? "register" : "login"}`,
         data
       );
-      console.log("User data:", response.data);
+
+      navigate('/');
+      // console.log("User data:", response.data);
     } catch (error) {
       console.log(`Something went wrong: ${error}`);
       setError(error.response.data.message);

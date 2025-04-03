@@ -1,4 +1,3 @@
-import React from 'react'
 import './TopBar.css';
 import UserButton from '../userButton/UserButton';
 import Image from '../image/Image';
