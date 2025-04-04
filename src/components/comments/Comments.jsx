@@ -31,7 +31,7 @@ const Comments = ({ id }) => {
       </div>
 
       {/* comment input form */}
-      <CommentForm />
+      <CommentForm id={id} />
     </div>
   );
 }
