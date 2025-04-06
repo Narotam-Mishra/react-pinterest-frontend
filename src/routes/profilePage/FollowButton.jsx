@@ -1,9 +1,9 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import apiRequest from "../../utils/apiRequest";
 
-const followUser = async () => {
-  const res = apiRequest.post(`/users/follow/:${username}`);
-  return (await res).data;
+const followUser = async (username) => {
+  const res = await apiRequest.post(`/users/follow/${username}`);
+  return res.data;
 };
 
 const FollowButton = ({ isFollowing, username }) => {
