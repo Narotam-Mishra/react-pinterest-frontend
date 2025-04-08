@@ -1,7 +1,7 @@
 
 const Workspace = () => {
   return (
-    <div>Workspace</div>
+    <div className="workspace">Workspace</div>
   )
 }
 

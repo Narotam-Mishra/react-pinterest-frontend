@@ -3,12 +3,12 @@ import Layers from "./Layers";
 import Options from "./Options";
 import Workspace from "./Workspace";
 
-const Editor = () => {
+const Editor = ({ previewImg }) => {
   return (
     <div className="editor">
-      <Layers />
-      <Workspace />
-      <Options />
+      <Layers previewImg={previewImg} />
+      <Workspace previewImg={previewImg} />
+      <Options previewImg={previewImg} />
     </div>
   )
 }

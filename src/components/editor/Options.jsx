@@ -1,7 +1,7 @@
 
 const Options = () => {
   return (
-    <div>Options</div>
+    <div className="options">Options</div>
   )
 }
 
