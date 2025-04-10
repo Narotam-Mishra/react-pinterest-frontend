@@ -1,19 +1,26 @@
+import useEditorStore from "../../utils/editorStore"
 import Image from "../image/Image"
 
 const Layers = () => {
+  const { selectedLayer, setSelectedLayer } = useEditorStore();
+
+  const handleSelectedLayer = (layer) => {
+    setSelectedLayer(layer);
+  }
+  
   return (
     <div className="layers">
       <div className="layersTitle">
         <h3>Layers</h3>
         <p>Select a layer to edit</p>
       </div>
-      <div className="layer">
+      <div onClick={() => handleSelectedLayer("text")} className={`layer ${selectedLayer === "text" ? "selected" : ""}`}>
         <div className="layerImage">
           <Image path="/general/text.png" alt="" w={48} h={48} />
         </div>
         <span>Add Text</span>
       </div>
-      <div className="layer">
+      <div onClick={() => handleSelectedLayer("canvas")} className={`layer ${selectedLayer === "canvas" ? "selected" : ""}`}>
         <div className="layerImage" style={{ backgroundColor: "teal" }}></div>
         <span>Canvas</span>
       </div>
