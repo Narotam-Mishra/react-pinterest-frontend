@@ -69,8 +69,16 @@ const landscapeSizes = [
 ];
 
 const Options = () => {
-  const { selectedLayer, textOptions, setTextOptions } = useEditorStore();
+  const { selectedLayer, textOptions, setTextOptions, canvasOptions, setCanvasOptions } = useEditorStore();
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
+
+  const handleOrientationClick = (orientation) => {
+
+  }
+
+  const handleSizeClick = (size) => {
+
+  }
 
   return (
     <div className="options">
@@ -94,16 +102,16 @@ const Options = () => {
                 style={{ backgroundColor: textOptions.color }}
                 onClick={() => setIsColorPickerOpen((prev) => !prev)}
               />
-            {isColorPickerOpen && (
-              <div className="colorPicker">
-                <HexColorPicker
-                  color={textOptions.color}
-                  onChange={(color) =>
-                    setTextOptions({ ...textOptions, color: color })
-                  }
-                />
-              </div>
-            )}
+              {isColorPickerOpen && (
+                <div className="colorPicker">
+                  <HexColorPicker
+                    color={textOptions.color}
+                    onChange={(color) =>
+                      setTextOptions({ ...textOptions, color: color })
+                    }
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -112,17 +120,89 @@ const Options = () => {
           <div className="editingOption">
             <span>Orientation</span>
             <div className="orientations">
-              <div className="orientation">P</div>
-              <div className="orientation">L</div>
+              <div
+                className={`orientation ${
+                  canvasOptions.orientation === "portrait" ? "selected" : ""
+                }`}
+                onClick={() => handleOrientationClick("portrait")}
+              >
+                P
+              </div>
+              <div
+                className={`orientation ${
+                  canvasOptions.orientation === "landscape" ? "selected" : ""
+                }`}
+                onClick={() => handleOrientationClick("landscape")}
+              >
+                L
+              </div>
             </div>
           </div>
           <div className="editingOption">
             <span>Size</span>
             <div className="sizes">
-              <div className="size">Original</div>
-              {
-                {}
-              }
+              <div
+                className={`size ${
+                  canvasOptions.size === "original" ? "selected" : ""
+                }`}
+                onClick={() => handleSizeClick("original")}
+              >
+                Original
+              </div>
+              {canvasOptions.orientation === "portrait" ? (
+                <>
+                  {portraitSizes.map((size) => (
+                    <div
+                      className={`size ${
+                        canvasOptions.size === size.name ? "selected" : ""
+                      }`}
+                      key={size.name}
+                      onClick={() => handleSizeClick(size)}
+                    >
+                      {size.name}
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <>
+                  {landscapeSizes.map((size) => (
+                    <div
+                      className={`size ${
+                        canvasOptions.size === size.name ? "selected" : ""
+                      }`}
+                      key={size.name}
+                      onClick={() => handleSizeClick(size)}
+                    >
+                      {size.name}
+                    </div>
+                  ))}
+                </>
+              )}
+            </div>
+          </div>
+          <div className="editingOption">
+            <span>Background Color</span>
+            <div className="bgColor">
+              <div className="textColor">
+                <div
+                  className="colorPreview"
+                  style={{ backgroundColor: canvasOptions.backgroundColor }}
+                  onClick={() => setIsColorPickerOpen((prev) => !prev)}
+                />
+                {isColorPickerOpen && (
+                  <div className="colorPicker">
+                    <HexColorPicker
+                      color={canvasOptions.backgroundColor}
+                      onChange={(color) =>
+                        setCanvasOptions({
+                          ...canvasOptions,
+                          backgroundColor: color,
+                        })
+                      }
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
