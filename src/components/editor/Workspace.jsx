@@ -19,7 +19,13 @@ const Workspace = ({ previewImg }) => {
 
   return (
     <div className="workspace">
-      <div className="canvas">
+      <div
+        className="canvas"
+        style={{
+          height: canvasOptions.height,
+          backgroundColor: canvasOptions.backgroundColor,
+        }}
+      >
         <img src={previewImg.url} alt="" />
         {textOptions.text && (
           <div
@@ -37,7 +43,7 @@ const Workspace = ({ previewImg }) => {
                 setTextOptions({ ...textOptions, text: e.target.value })
               }
               style={{
-                color: textOptions.color
+                color: textOptions.color,
               }}
             />
             <div
