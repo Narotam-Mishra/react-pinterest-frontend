@@ -57,7 +57,8 @@ const CreatePage = () => {
             "Content-Type": "multipart/form-data",
           }
         });
-        console.log("create page API Response:", res);
+        // console.log("create page API Response:", res);
+        navigate(`/pin/${res.data._id}`);
       } catch (error) {
         console.log("Error while submiting create page data:", error);
       }
@@ -137,7 +138,7 @@ const CreatePage = () => {
             <div className="createFormItem">
               <label htmlFor="board">Board</label>
               <select name="board" id="board">
-                <option>Choose a board</option>
+                <option value="">Choose a board</option>
                 <option value="1">Board 1</option>
                 <option value="2">Board 2</option>
                 <option value="3">Board 3</option>
