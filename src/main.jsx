@@ -1,19 +1,21 @@
-import { StrictMode } from 'react'
+import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router';
-import HomePage from './routes/homePage/HomePage.jsx';
-import CreatePage from './routes/createPage/CreatePage.jsx';
-import PostPage from './routes/postPage/PostPage.jsx';
-import AuthPage from './routes/authPage/AuthPage.jsx';
-import ProfilePage from './routes/profilePage/ProfilePage.jsx';
-import SearchPage from './routes/searchPage/SearchPage.jsx';
 import MainLayout from './routes/layouts/MainLayout.jsx';
+
 import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+
+// implementing lazy loading for each component
+const HomePage = React.lazy(() => import("./routes/homePage/HomePage.jsx"));
+const CreatePage = React.lazy(() => import("./routes/createPage/CreatePage.jsx"));
+const PostPage = React.lazy(() => import("./routes/postPage/PostPage.jsx"));
+const AuthPage = React.lazy(() => import("./routes/authPage/AuthPage.jsx"));
+const ProfilePage = React.lazy(() => import("./routes/profilePage/ProfilePage.jsx"));
+const SearchPage = React.lazy(() => import("./routes/searchPage/SearchPage.jsx"));
 
 // Create a client
 const queryClient = new QueryClient();
