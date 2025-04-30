@@ -1,10 +1,10 @@
 # SnapApp - A Pinterest-like Photo Sharing Application (Frontend)
 
-![SnapApp Banner](https://via.placeholder.com/800x200?text=SnapApp:+Share+Your+Visual+Stories)
+![SnapApp Banner](https://github.com/Narotam-Mishra/react-pinterest-frontend/blob/main/screenshots/HomePage.png)
 
 ## 📌 Overview
 
-A modern **Pinterest-inspired photo-sharing frontend application**, built with **React, Tailwind CSS, and Vite**. This is the **frontend** for a full-stack MERN application, enabling users to upload, explore, and interact with images in a clean, Pinterest-like interface.
+A modern **Pinterest-inspired photo-sharing frontend application**, built with **React, Node, CSS, and Vite**. This is the **frontend** for a full-stack MERN application, enabling users to upload, explore, and interact with images in a clean, Pinterest-like interface.
 
 🔗 **[View Live Demo](https://snapapp-react-frontend.netlify.app/)**
 
@@ -12,8 +12,7 @@ A modern **Pinterest-inspired photo-sharing frontend application**, built with *
 
 - **User Interface**
   - Clean and intuitive navigation
-  - Responsive masonry layout for image display
-  - Dark/light mode toggle
+  - Responsive grid layout for image display
   - Smooth animations and transitions
 
 - **User Authentication UI**
@@ -205,7 +204,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgements
 
 - [React.js Documentation](https://reactjs.org/docs/getting-started.html)
-- [Material UI](https://mui.com/)
+- [Vite](https://vite.dev/guide/)
 - [Pinterest](https://pinterest.com) for design inspiration
 - All the contributors to the open-source libraries used in this project
 
