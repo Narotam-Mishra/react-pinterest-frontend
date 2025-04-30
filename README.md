@@ -141,10 +141,10 @@ frontend/
 ```
 
 ## 📱 Screenshots
-![Login Screen](https://via.placeholder.com/400x250?text=Login+Screen)
-![Home Feed](https://via.placeholder.com/400x250?text=Home+Feed)
-![Pin Detail](https://via.placeholder.com/400x250?text=Pin+Detail)
-![Profile Page](https://via.placeholder.com/400x250?text=Profile+Page)
+![Login Screen](https://github.com/Narotam-Mishra/react-pinterest-frontend/blob/main/screenshots/LoginPage.png)
+![Home Feed](https://github.com/Narotam-Mishra/react-pinterest-frontend/blob/main/screenshots/HomePage.png)
+![Pin Detail](https://github.com/Narotam-Mishra/react-pinterest-frontend/blob/main/screenshots/pinDetails.png)
+![Profile Page](https://github.com/Narotam-Mishra/react-pinterest-frontend/blob/main/screenshots/UserProfilePage.png)
 
 ## 🔍 Key Frontend Implementation Details
 
