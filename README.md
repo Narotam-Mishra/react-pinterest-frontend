@@ -6,7 +6,7 @@
 
 A modern **Pinterest-inspired photo-sharing frontend application**, built with **React, Node, CSS, and Vite**. This is the **frontend** for a full-stack MERN application, enabling users to upload, explore, and interact with images in a clean, Pinterest-like interface.
 
-🔗 **[View Live Demo](https://snapapp-react-frontend.netlify.app/)**
+🔗 **[View Live Demo](https://react-pinterest-frontend-naru.vercel.app/)**
 
 ## ✨ Frontend Features
 
